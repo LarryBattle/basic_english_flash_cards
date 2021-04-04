@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearing Test</title>
+</head>
+<body>
+
+    <fieldset>
+        <legend>
+            Hearing test
+        </legend>
+        <audio src="left_side_beep.ogg" id="leftSideBeep" preload="auto"></audio>
+        <audio src="right_side_beep.ogg" id="rightSideBeep" preload="auto"></audio>
+        <input type="button" value="left ear" id="playLeftBeep">
+        <input type="button" value="right ear" id="playRightBeep">
+    
+    </fieldset>
+    
+<script>
+var onClickPlay = (inputId, audioId) => {
+    document.querySelector(inputId).onclick = () => {
+        document.querySelector(audioId).play();
+    };
+};
+onClickPlay("#playLeftBeep", "#leftSideBeep");
+onClickPlay("#playRightBeep", "#rightSideBeep");
+</script>
+</body>
+</html>
